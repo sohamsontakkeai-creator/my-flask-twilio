@@ -15,7 +15,7 @@ def voice():
     session.clear()  # Clear previous session data for new call
     twiml = """<?xml version="1.0" encoding="UTF-8"?>
 <Response>
-    <Gather input="speech" action="https://musicologically-twiggier-pamala.ngrok-free.dev/get_name" method="POST" timeout="5">
+    <Gather input="speech" action="https://my-flask-twilio.onrender.com/get_name" method="POST" timeout="5">
         <Say voice="alice">Hello! I am a sales assistant. So let's start. What's your full name?</Say>
     </Gather>
     <Say>I didn't hear anything. Goodbye!</Say>
@@ -31,7 +31,7 @@ def get_name():
 
     twiml = f"""<?xml version="1.0" encoding="UTF-8"?>
 <Response>
-    <Gather input="speech" action="https://musicologically-twiggier-pamala.ngrok-free.dev/get_phone" method="POST" timeout="5">
+    <Gather input="speech" action="https://my-flask-twilio.onrender.com/get_phone" method="POST" timeout="5">
         <Say voice="alice">Thanks, {session['name']}. What is your phone number?</Say>
     </Gather>
     <Say>I didn't hear anything. Goodbye!</Say>
@@ -47,7 +47,7 @@ def get_phone():
 
     twiml = """<?xml version="1.0" encoding="UTF-8"?>
 <Response>
-    <Gather input="speech" action="https://musicologically-twiggier-pamala.ngrok-free.dev/get_interest" method="POST" timeout="5">
+    <Gather input="speech" action="https://my-flask-twilio.onrender.com/get_interest" method="POST" timeout="5">
         <Say voice="alice">Great! What product or service are you interested in?</Say>
     </Gather>
     <Say>I didn't hear anything. Goodbye!</Say>
@@ -63,7 +63,7 @@ def get_interest():
 
     twiml = """<?xml version="1.0" encoding="UTF-8"?>
 <Response>
-    <Gather input="speech" action="https://musicologically-twiggier-pamala.ngrok-free.dev/get_budget" method="POST" timeout="5">
+    <Gather input="speech" action="https://my-flask-twilio.onrender.com/get_budget" method="POST" timeout="5">
         <Say voice="alice">Thanks! What is your budget for this?</Say>
     </Gather>
     <Say>I didn't hear anything. Goodbye!</Say>
