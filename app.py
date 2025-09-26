@@ -94,7 +94,9 @@ def get_budget():
 """
     return Response(twiml, mimetype="text/xml")
 
-
+@app.route("/download_leads")
+def download_leads():
+    return send_file("leads.txt", as_attachment=True)
 
 @app.route("/call")
 def make_call():
@@ -108,3 +110,4 @@ def make_call():
 
 if __name__ == "__main__":
     app.run(port=5000, debug=True)
+
